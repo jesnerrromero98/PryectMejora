@@ -1,18 +1,197 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import {View, SafeAreaView,Image, StyleSheet, ScrollView, Dimensions} from 'react-native';
+//import Encabezado from './../component/encabezado';
+//import {useNavigation} from '@react-navigation/native';
+//import DetalleNotiScreen from './detalleNoti';
+import {
+  Avatar,
+  Title,
+  Card,
+  Paragraph,
+  Button,
+  IconButton,
+  Caption,
+  Icon,
+  Text,
+  TouchableRipple,
+} from 'react-native-paper';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Notifications = () => {
-  return (
-    <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor:'green'
-    }}>
-      <Text>Hello, world!</Text>
-    </View>
+const NotificationsScreen = ({navigation}) => {
+  
+  return(
+    <SafeAreaView style={style.container}>
+             
+     <ScrollView>
+      <View>
+        
+            <View style={style.heder}>
+              <Card style={style.card}>
+                <Image
+                  source={require('./../../../asset/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Title style={style.cardTitle} >Unidad 204</Title>
+                <Text style={style.cardText}>Buen Estado</Text>
+                <Text style={style.cardText1}>Bom San Migelito</Text>
+              
+                <Button
+                  style={style.btnSerrarcesion}
+                  onPress = {() => navigation.navigate('Detalle')}>
+                  <Text style={style.cardTitle1}>Ver Mas..</Text></Button>               
+                  <View style={style.div1}/>
+              </Card>
+
+              <Card style={style.card}>
+                <Image
+                  source={require('./../../../asset/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Title style={style.cardTitle} >Unidad 203</Title>
+                <Paragraph style={style.cardText}>Buen Estado</Paragraph>
+                <Paragraph style={style.cardText1}>MyD</Paragraph>
+              </Card>
+            
+              <Card style={style.card}>
+                <Image
+                  source={require('./../../../asset/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Title style={style.cardTitle} >Unidad 80</Title>
+                <Paragraph style={style.cardText}>Buen Estado</Paragraph>
+                <Paragraph style={style.cardText1}>Bom Adicional</Paragraph>
+              </Card>
+
+              <Card style={style.card}>
+                <Image
+                  source={require('./../../../asset/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Title style={style.cardTitle} >Unidad 55</Title>
+                <Paragraph style={style.cardText}>Buen Estado</Paragraph>
+                <Paragraph style={style.cardText1}>Bom Santo Tomas</Paragraph>
+              </Card>
+
+              <Card style={style.card}>
+                <Image
+                  source={require('./../../../asset/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Title style={style.cardTitle} >Unidad 343</Title>
+                <Paragraph style={style.cardText}>Buen Estado</Paragraph>
+                <Paragraph style={style.cardText1}>Bom Juigalpa</Paragraph>
+              </Card>
+
+              
+              
+              <View style={style.div}/>
+            
+          </View>
+
+      </View>
+      </ScrollView>
+    </SafeAreaView>
   );
-}
+};
+export default NotificationsScreen;
 
+const style = StyleSheet.create({
+  container:{
+   flex:1,
+    backgroundColor:'#BFB1B1'
+    
+  },
+    heder:{
+      marginTop:-1
+      },
 
-export default Notifications ;
+   hederTitle:{
+    alignItems:'center',
+    fontWeight: 'bold',
+    color:'#3A3940',
+    fontSize: 20,
+    
+  },
+
+   cardTitle: {
+    fontSize: 24,
+    marginLeft: 140,
+    marginTop: -80,
+    alignItems: 'stretch',
+    color:'#fafafa',
+    
+  },
+  
+  cardTitle1: {
+    fontSize: 16,
+    marginLeft: 0,
+    marginTop: -0,
+    alignItems: 'center',
+    color:'#ffffff',
+    
+  },
+  cardText:{
+    color: "white",
+    fontWeight: '90',
+    fontSize:15,
+    marginTop:-53,
+    marginLeft:140,
+    lineHeight: 120,
+  },
+  
+  cardText1:{
+    color: "yellow",
+    fontWeight: '90',
+    fontSize:15,
+    marginTop:-105,
+    marginLeft:140,
+    lineHeight: 120,
+  },
+
+  card:{
+    marginTop:20,
+    backgroundColor:'#406FE7', 
+    width: '95%',
+    marginHorizontal:10,
+    paddingHorizontal:15,
+    borderRadius:20
+  },
+
+  btnSerrarcesion:{
+    backgroundColor:"transparent",
+    marginTop: -20,
+    height:40,
+    width:125, 
+    borderRadius:30,
+    marginLeft:110
+  },
+
+  btnSerrarcesionText:{
+    color:'#E6FFFD',
+    alignContent:'space-around',
+    fontWeight:'bold'
+  },
+  imagen:{
+    width: 90,
+    height: 90,
+    resizeMode: 'cover',
+    borderRadius: 10,
+    marginLeft: 5,
+    marginTop: 20
+},
+
+div:{
+  height: 20
+},
+
+div1:{
+  height: 10
+},
+
+});
+
